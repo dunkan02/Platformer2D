@@ -97,11 +97,6 @@ public class PlayerMovement : MonoBehaviour
         SetGround(colliderOther, true);
     }
 
-    private void OnCollisionStay2D(Collision2D colliderOther)
-    {
-        SetGround(colliderOther, true);
-    }
-
     private void OnCollisionExit2D(Collision2D colliderOther)
     {
         SetGround(colliderOther, false);
