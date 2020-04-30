@@ -6,6 +6,7 @@ public class FollowCamera : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private float _speed = 8f;
+
     private void Start()
     {
         if (_target == null)
@@ -14,7 +15,7 @@ public class FollowCamera : MonoBehaviour
 
     private void Update()
     {
-        Vector3 tempPosition = Vector3.Lerp(transform.position, _target.position, Time.deltaTime * _speed);
-        transform.position = new Vector3(tempPosition.x, tempPosition.y, transform.position.z);
+        Vector3 nextStepPosition = Vector3.Lerp(transform.position, _target.position, Time.deltaTime * _speed);
+        transform.position = new Vector3(nextStepPosition.x, nextStepPosition.y, transform.position.z);
     }
 }
